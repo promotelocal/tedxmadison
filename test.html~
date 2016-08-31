@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	<title>TEDxMadison</title>
+	<meta name="description" content="TEDxMadison" />
+	<link rel="icon" type="image/png" href="./wp-content/uploads/2016/08/cropped-favicon-1-32x32.png">
+	<link rel="stylesheet" type="text/css" href="reset.css">
+	<link rel="stylesheet" type="text/css" href="font-awesome-4.6.3/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="site.css">
+
+	<!-- set scale for mobile devices -->
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<style>
+	 @font-face {
+	     font-family: 'Lato';
+	     src: url('./Lato-Regular.ttf');
+	 }
+	</style>
+    </head>
+    <body>
+	<div class="sandbox" style="z-index: -1;"></div>
+	<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+	<script src="./hcj/dist/hcj.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+	<script src="./waitForWebfonts.js"></script>
+	<script src="./main.js"></script>
+    </body>
+</html>
