@@ -180,7 +180,7 @@ $(function () {
 	thumbSrc: './images/speakers/thumbnail_Jenine Gao - Grid-01.jpg',
 	expandedSrc: './images/speakers/Jenine Gao - Expanded-01.jpg',
 	bio: [
-	  "Jenie Gao is an artist, writer, and disgustingly organized project manager. She sees her work as a teaching tool, a way to challenge conventional wisdom and invite others to do the same. Her artistic roots lie in the history of printmaking. She is known for her bold woodcuts, ink work, and allegorical storytelling style that address our universal—yet often isolating and divisive—human dilemmas.",
+	  "Jenie Gao is an artist, writer, and disgustingly organized project manager. She sees her work as a teaching tool, a way to challenge conventional wisdom and invite others to do the same. Her artistic roots lie in the history of printmaking. She is known for her bold woodcuts, ink work, and allegorical storytelling style that address our universal&mdash;yet often isolating and divisive&mdash;human dilemmas.",
 	  "Having worked across industries, from education to nonprofit to lean manufacturing, Jenie is passionate about cross-disciplinary work. She believes that fair access to creative education is fundamental to human prosperity and is a big proponent of the emerging maker movement, in using creativity and logic to foster our connection to how and why we make things.",
 	  "Jenie continues to work collaboratively across the worlds of fine arts, business, and nonprofit. She advocates for the role of the arts in the building stronger, smarter, kinder communities.",
 	],
@@ -199,7 +199,7 @@ $(function () {
 	expandedSrc: './images/speakers/Kelly Senecal - Expanded-01.jpg',
 	bio: [
 	  "Kelly Senecal is a co-founder and owner of Convergent Science, Inc. with headquarters in Madison, Wisconsin, and Convergent Science, GmbH with headquarters in Linz, Austria. Dr. Senecal is one of the original developers of the CONVERGE computational fluid dynamics software package. He is a consultant to the automotive industry and works closely with engineers on problems related to combustion modeling and other fluid flow phenomena. He is experienced at managing large consulting and software development projects for the private sector.",
-	  "Dr. Senecal received his PhD from the University of Wisconsin-Madison.  He has written a number of research papers in the area of Computational Fluid Dynamics (CFD) of reactive flows. He has received international recognition for his pioneering work on the use of CFD in the engine design process, including articles in The New York Times and England’s The Sunday Times. He is also the author of the widely used LISA (Linearized Instability Sheet Atomization) spray breakup model",
+	  "Dr. Senecal received his PhD from the University of Wisconsin-Madison.  He has written a number of research papers in the area of Computational Fluid Dynamics (CFD) of reactive flows. He has received international recognition for his pioneering work on the use of CFD in the engine design process, including articles in The New York Times and England\'s The Sunday Times. He is also the author of the widely used LISA (Linearized Instability Sheet Atomization) spray breakup model",
 	],
   }];
   var speakerDialog = function (speaker) {
@@ -245,7 +245,9 @@ $(function () {
 			}]),
 			all([
 			  margin(20),
-			])(stack()(speaker.bio.map(function (paragraph) {
+			])(stack({
+			  padding: 10,
+			})(speaker.bio.map(function (paragraph) {
 			  return text(paragraph, [fonts.p, {
 				measureHeight: true,
 			  }]);
