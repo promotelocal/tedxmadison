@@ -270,7 +270,9 @@ $(function () {
 	  measureHeight: true,
 	  align: 'center',
 	}]),
-	grid()(speakers.map(function (s) {
+	grid({
+	  handleSurplusWidth: centerSurplusWidth,
+	})(speakers.map(function (s) {
 	  return all([
 		withMinWidth(300),
 		link,
