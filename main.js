@@ -447,7 +447,7 @@ $(function () {
   }, {
 	name: 'James Kokalj',
 	position: 'Secondary License Holder',
-	src: './images/james-1.png',
+	src: './images/james-darkened-01.jpg',
 	linkedIn: 'https://www.linkedin.com/in/kokalj?authType=NAME_SEARCH&authToken=9ezo&locale=en_US&trk=tyah&trkInfo=clickedVerticalmynetworkclickedEntityId13500043authTypeNAME_SEARCHidx1-3-3tarId1472500378535tasjames',
 	email: 'mailto:jameskokalj@gmail.com',
   }, {
@@ -459,7 +459,7 @@ $(function () {
   }, {
 	name: 'Michelle Roach',
 	position: 'Sponsorship Liaison',
-	src: './images/michelle-1.png',
+	src: './images/michelle-darkened-01.jpg',
 	linkedIn: 'https://www.linkedin.com/in/roachmichelle?authType=NAME_SEARCH&authToken=9wBS&locale=en_US&trk=tyah&trkInfo=clickedVerticalmynetworkclickedEntityId109535263authTypeNAME_SEARCHidx1-1-1tarId1472500442260tasmichelle',
 	email: 'mailto:michelle@promotelocal.com',
   }].map(function (o) {
