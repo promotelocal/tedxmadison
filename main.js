@@ -56,7 +56,6 @@ $(function () {
 	},
   };
   var bodyColumn = function (x) {
-	return x;
 	return c.alignLRM()({
 	  m: c.all([
 		c.minWidth(1200),
@@ -88,9 +87,18 @@ $(function () {
 	  }),
 	  font: colors.white,
 	}),
-  ])(c.alignLRM()({
-	r: c.largestWidthThatFits()([
-	  c.sideBySide({
+  ])(c.sideBySide({
+	surplusWidthFunc: hcj.funcs.surplusWidth.giveToNth(1),
+  })([
+	c.image({
+	  src: './images/Header logo-01.png',
+	  minWidth: 200,
+	}),
+	c.largestWidthThatFits()([
+	  c.all([
+		c.alignHRight,
+		c.alignVMiddle,
+	  ])(c.sideBySide({
 		padding: 20,
 	  })(headerLinks.map(function (l) {
 		return c.all([
@@ -99,8 +107,9 @@ $(function () {
 		  lineHeight: 1,
 		  measureWidth: true,
 		  oneLine: true,
+		  family: 'Raleway',
 		}]));
-	  })),
+	  }))),
 	  c.all([
 		c.keepAspectRatio(),
 		c.alignHRight,
@@ -119,7 +128,7 @@ $(function () {
 		minHeight: 16,
 	  })),
 	]),
-  }));
+  ]));
   var dropdownOptions = c.stack()(headerLinks.map(function (l) {
 	return c.all([
 	  c.margin(20),
@@ -161,10 +170,10 @@ $(function () {
   var topView = c.all([
 	c.keepAspectRatio({
 	  fill: true,
-	  left: true,
+	  // left: true,
 	}),
   ])(c.image({
-	src: './images/TedX-Banner2.png',
+	src: './images/TedX-Banner2.jpg',
   }));
   var lilQuote = c.all([
 	bodyColumn,
@@ -217,7 +226,7 @@ $(function () {
 	expandedSrc: './images/speakers/thumbnail_Matthew Gonnering - Expanded-01.jpg',
 	bio: [
 	  "Matthew Gonnering is the CEO of Widen, a marketing technology company founded in 1948. Blessed to work with highly intelligent, playful, self-starting Wideneers, Matthew has reshaped his role into &ldquo;Chief Eudaimonia Officer.&rdquo; His mission is to create happiness, health and prosperity for his colleagues, customers and community.",
-	  "Matthew joined Widen in 2000 and became CEO in 2009. His team solves marketing and creative problems with digital asset management (DAM) software. Under Matthew's leadership, Widen has become a WorldBlu Freedom-Centered Workplace™ and a Madison Magazine Best Place to Work.  His ongoing commitment to faith, family, education, and nonprofit work shape his desire to ground organizational culture in humanity.",
+	  "Matthew joined Widen in 2000 and became CEO in 2009. His team solves marketing and creative problems with digital asset management (DAM) software. Under Matthew's leadership, Widen has become a WorldBlu Freedom-Centered Workplace&#x2122; and a Madison Magazine Best Place to Work.  His ongoing commitment to faith, family, education, and nonprofit work shape his desire to ground organizational culture in humanity.",
 	  "Matthew and his beautiful wife Sarah have five energetic children and reside in the Madison area.  He lives a eudaimonious life and encourages others to do the same.",
 	],
   }, {
@@ -235,7 +244,7 @@ $(function () {
 	thumbSrc: './images/speakers/Pupa_Gilbert_Grid.jpg',
 	expandedSrc: './images/speakers/Pupa_Gilbert.jpg',
 	bio: [
-	  'Pupa Gilbert is a professor of physics at UW-Madison, who studies biominerals, including seashells, sea urchin spines and teeth, and corals. She likes to figure out how they are formed by living organisms, who master physics and chemistry for their evolutionary advantage. She lives in Madison and Berkeley, teaches “Physics in the Arts”, and wrote a “Physics in the Arts” book co-authored with Willy Haeberli, published in English (2008, 2011) and Chinese (2011). She won several awards including: Knight of Italy (2001); Romnes 2002, Vilas 2006, Hamel 2008, and Chancellor Distinguished Teaching Award 2011 at UW-Madison; The Outstanding Young Persons of the world (TOYP-JCI, 1997); American Competitiveness and Innovation Award (ACI-NSF, 2008); American Physical Society Fellowship (2010); Science-NSF Visualizations Challenge (2012); BiophysicsART (2014); Radcliffe Fellowship (2014-2015, 2016). She loves to bridge the gap between art and science, is an art collector, enjoys traveling and wine making.',
+	  "Pupa Gilbert is a professor of physics at UW-Madison, who studies biominerals, including seashells, sea urchin spines and teeth, and corals. She likes to figure out how they are formed by living organisms, who master physics and chemistry for their evolutionary advantage. She lives in Madison and Berkeley, teaches &#x201c;Physics in the Arts&#x201d;, and wrote a &#x201c;Physics in the Arts&#x201d; book co-authored with Willy Haeberli, published in English (2008, 2011) and Chinese (2011). She won several awards including: Knight of Italy (2001); Romnes 2002, Vilas 2006, Hamel 2008, and Chancellor Distinguished Teaching Award 2011 at UW-Madison; The Outstanding Young Persons of the world (TOYP-JCI, 1997); American Competitiveness and Innovation Award (ACI-NSF, 2008); American Physical Society Fellowship (2010); Science-NSF Visualizations Challenge (2012); BiophysicsART (2014); Radcliffe Fellowship (2014-2015, 2016). She loves to bridge the gap between art and science, is an art collector, enjoys traveling and wine making.",
 	],
   }, {
 	name: 'Mike Ford',
@@ -243,7 +252,7 @@ $(function () {
 	thumbSrc: './images/speakers/Mike_Ford_Grid.jpg',
 	expandedSrc: './images/speakers/Mike_Ford.jpg',
 	bio: [
-	  'Born and raised in Detroit, Michael Ford, The Hip Hop Architect, is the designer of The Universal Hip Hop Museum. He has dedicated his professional career to stimulating cross disciplinary discourse on the sociological and cultural implications of architecture and urban planning on its inhabitants. Focusing on the intersection of the built environment and hip hop culture, through three interconnected realms; academia, media and practice, Ford’s national Hip Hop Architecture lecture tour has included stops at Harvard’s Graduate School of Design, University of Pennsylvania, South by Southwest and his alma matter University of Detroit Mercy, where he received his master’s degree in architecture. Ford has worked as a designer at Hamilton Anderson Associates in Detroit and at Flad Architects in Madison, Wisconsin. Michael Ford serves on the board of Detroit’s chapter of NOMA, The National Organization of Minority Architects and is currently a fulltime instructor at Madison College.',
+	  "Born and raised in Detroit, Michael Ford, The Hip Hop Architect, is the designer of The Universal Hip Hop Museum. He has dedicated his professional career to stimulating cross disciplinary discourse on the sociological and cultural implications of architecture and urban planning on its inhabitants. Focusing on the intersection of the built environment and hip hop culture, through three interconnected realms; academia, media and practice, Ford&#x2019;s national Hip Hop Architecture lecture tour has included stops at Harvard&#x2019;s Graduate School of Design, University of Pennsylvania, South by Southwest and his alma matter University of Detroit Mercy, where he received his master&#x2019;s degree in architecture. Ford has worked as a designer at Hamilton Anderson Associates in Detroit and at Flad Architects in Madison, Wisconsin. Michael Ford serves on the board of Detroit&#x2019;s chapter of NOMA, The National Organization of Minority Architects and is currently a fulltime instructor at Madison College.",
 	],
   }, {
 	name: 'Tim Allen',
@@ -251,7 +260,7 @@ $(function () {
 	thumbSrc: './images/speakers/Tim_Allen-01_Grid.jpg',
 	expandedSrc: './images/speakers/Tim_Allen-01.jpg',
 	bio: [
-	  'Timothy Allen is Professor Emeritus of Botany at the University of Wisconsin, Madison. He has been applying notions of complex systems and hierarchy theory to ecology for forty years. His first book, Hierarchy, perspectives for ecological complexity, Chicago Press 1982 established complex hierarchy theory and scaling in ecology (in press 2nd ed). His four other hierarchy theoretic books broaden across all types of ecology and beyond to the life and social sciences in general. He has published over 60 scholarly works in journals on community data analysis, agricultural systems, issues of scale, and sustainability. His latest book with T. Hoekstra is the 2nd ed of Toward a Unified Ecology, 2015. He enters the emerging field of economic ecology with J. Tainter considering complex societal collapse through diminishing return on investment. He marries rate-dependent thermodynamics with rate-independent constraint in complex ecological and social systems to predict changes.',
+	  "Timothy Allen is Professor Emeritus of Botany at the University of Wisconsin, Madison. He has been applying notions of complex systems and hierarchy theory to ecology for forty years. His first book, Hierarchy, perspectives for ecological complexity, Chicago Press 1982 established complex hierarchy theory and scaling in ecology (in press 2nd ed). His four other hierarchy theoretic books broaden across all types of ecology and beyond to the life and social sciences in general. He has published over 60 scholarly works in journals on community data analysis, agricultural systems, issues of scale, and sustainability. His latest book with T. Hoekstra is the 2nd ed of Toward a Unified Ecology, 2015. He enters the emerging field of economic ecology with J. Tainter considering complex societal collapse through diminishing return on investment. He marries rate-dependent thermodynamics with rate-independent constraint in complex ecological and social systems to predict changes.",
 	],
   }];
   var speakerDialog = function (speaker, closeD) {
@@ -459,21 +468,24 @@ $(function () {
 		href: o.linkedIn,
 		targetBlank: true,
 	  }),
-	])(c.stack({
-	  padding: 10,
-	})([
+	])(c.overlays()([
 	  c.image({
 		src: o.src,
+		minWidth: 300,
 	  }),
-	  c.text(o.name, [fonts.p, {
-		oneLine: true,
-		align: 'center',
-		size: 18,
-	  }]),
-	  c.text(o.position, [fonts.p, {
-		oneLine: true,
-		align: 'center',
-	  }]),
+	  c.all([
+		c.margin(20),
+		c.minWidth(300),
+	  ])(c.alignTBM()({
+		b: c.stack()([
+		  c.text(o.name, [fonts.h2, {
+			measureHeight: true,
+		  }]),
+		  c.text(o.position, [fonts.p, {
+			measureHeight: true,
+		  }]),
+		]),
+	  }))
 	]));
   });
   var organizers = c.all([
@@ -632,7 +644,7 @@ $(function () {
 	href: 'http://www.matrixcoworking.com/en',
 	imageSrc: './slider-images/matrix-01.jpg',
   }, {
-	href: 'https://www.app.promotelocal.com/',
+	href: 'https://www.promotelocal.com/',
 	imageSrc: './slider-images/PL-01.jpg',
   }, {
 	href: 'http://www.letsbackflip.com/',
@@ -751,6 +763,7 @@ $(function () {
 
   new FontLoader([
 	'Lato',
+	'Raleway',
   ], {
 	complete: function () {
 	  waitForWebfonts([
