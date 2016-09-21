@@ -50,15 +50,20 @@ $(function () {
 	  family: 'Lato',
 	  size: px(28),
 	},
+	h3: {
+	  family: 'Lato',
+	  size: px(25),
+	},
 	p: {
 	  family: 'Lato',
 	  size: px(17),
 	},
   };
+  var columnWidth = 1200;
   var bodyColumn = function (x) {
 	return c.alignLRM()({
 	  m: c.all([
-		c.minWidth(1200),
+		c.minWidth(columnWidth),
 	  ])(x),
 	});
   };
@@ -129,21 +134,22 @@ $(function () {
 	  })),
 	]),
   ]));
-  var dropdownOptions = c.stack()(headerLinks.map(function (l) {
+  var dropdownOptions = c.all([
+	c.backgroundColor({
+	  background: color({
+		a: 0.7,
+	  }),
+	  font: colors.white,
+	}),
+  ])(c.stack()(headerLinks.map(function (l) {
 	return c.all([
 	  c.margin(20),
-	  c.backgroundColor({
-		background: color({
-		  a: 0.7,
-		}),
-		font: colors.white,
-	  }),
 	  c.linkTo(l.href),
 	])(c.text(l.name, [fonts.p, {
 	  measureWidth: true,
 	  oneLine: true,
 	}]));
-  }));
+  })));
   var headerHeightS = stream.once(0);
   var header = c.all([
 	c.$$(function ($el) {
@@ -220,7 +226,7 @@ $(function () {
 	  "Jenie continues to work collaboratively across the worlds of fine arts, business, and nonprofit. She advocates for the role of the arts in the building stronger, smarter, kinder communities.",
 	],
   }, {
-	name: 'Matt Gonnering',
+	name: 'Matthew Gonnering',
 	subject: 'Organizational Structure',
 	thumbSrc: './images/speakers/thumbnail_Matt Gonnering - Grid-01.jpg',
 	expandedSrc: './images/speakers/thumbnail_Matthew Gonnering - Expanded-01.jpg',
@@ -244,7 +250,8 @@ $(function () {
 	thumbSrc: './images/speakers/Pupa_Gilbert_Grid.jpg',
 	expandedSrc: './images/speakers/Pupa_Gilbert.jpg',
 	bio: [
-	  "Pupa Gilbert is a professor of physics at UW-Madison, who studies biominerals, including seashells, sea urchin spines and teeth, and corals. She likes to figure out how they are formed by living organisms, who master physics and chemistry for their evolutionary advantage. She lives in Madison and Berkeley, teaches &#x201c;Physics in the Arts&#x201d;, and wrote a &#x201c;Physics in the Arts&#x201d; book co-authored with Willy Haeberli, published in English (2008, 2011) and Chinese (2011). She won several awards including: Knight of Italy (2001); Romnes 2002, Vilas 2006, Hamel 2008, and Chancellor Distinguished Teaching Award 2011 at UW-Madison; The Outstanding Young Persons of the world (TOYP-JCI, 1997); American Competitiveness and Innovation Award (ACI-NSF, 2008); American Physical Society Fellowship (2010); Science-NSF Visualizations Challenge (2012); BiophysicsART (2014); Radcliffe Fellowship (2014-2015, 2016). She loves to bridge the gap between art and science, is an art collector, enjoys traveling and wine making.",
+	  "Pupa Gilbert is a professor of physics at UW-Madison, who studies biominerals, including seashells, sea urchin spines and teeth, and corals. She likes to figure out how they are formed by living organisms, who master physics and chemistry for their evolutionary advantage.",
+	  "She lives in Madison and Berkeley, teaches &#x201c;Physics in the Arts&#x201d;, and wrote a &#x201c;Physics in the Arts&#x201d; book co-authored with Willy Haeberli, published in English (2008, 2011) and Chinese (2011). She won several awards including: Knight of Italy (2001); Romnes 2002, Vilas 2006, Hamel 2008, and Chancellor Distinguished Teaching Award 2011 at UW-Madison; The Outstanding Young Persons of the world (TOYP-JCI, 1997); American Competitiveness and Innovation Award (ACI-NSF, 2008); American Physical Society Fellowship (2010); Science-NSF Visualizations Challenge (2012); BiophysicsART (2014); Radcliffe Fellowship (2014-2015, 2016). She loves to bridge the gap between art and science, is an art collector, enjoys traveling and wine making.",
 	],
   }, {
 	name: 'Mike Ford',
@@ -252,7 +259,9 @@ $(function () {
 	thumbSrc: './images/speakers/Mike_Ford_Grid.jpg',
 	expandedSrc: './images/speakers/Mike_Ford.jpg',
 	bio: [
-	  "Born and raised in Detroit, Michael Ford, The Hip Hop Architect, is the designer of The Universal Hip Hop Museum. He has dedicated his professional career to stimulating cross disciplinary discourse on the sociological and cultural implications of architecture and urban planning on its inhabitants. Focusing on the intersection of the built environment and hip hop culture, through three interconnected realms; academia, media and practice, Ford&#x2019;s national Hip Hop Architecture lecture tour has included stops at Harvard&#x2019;s Graduate School of Design, University of Pennsylvania, South by Southwest and his alma matter University of Detroit Mercy, where he received his master&#x2019;s degree in architecture. Ford has worked as a designer at Hamilton Anderson Associates in Detroit and at Flad Architects in Madison, Wisconsin. Michael Ford serves on the board of Detroit&#x2019;s chapter of NOMA, The National Organization of Minority Architects and is currently a fulltime instructor at Madison College.",
+	  "Born and raised in Detroit, Michael Ford, The Hip Hop Architect, is the designer of The Universal Hip Hop Museum. He has dedicated his professional career to stimulating cross disciplinary discourse on the sociological and cultural implications of architecture and urban planning on its inhabitants.",
+	  "Focusing on the intersection of the built environment and hip hop culture, through three interconnected realms; academia, media and practice, Ford&#x2019;s national Hip Hop Architecture lecture tour has included stops at Harvard&#x2019;s Graduate School of Design, University of Pennsylvania, South by Southwest and his alma matter University of Detroit Mercy, where he received his master&#x2019;s degree in architecture.",
+	  "Ford has worked as a designer at Hamilton Anderson Associates in Detroit and at Flad Architects in Madison, Wisconsin. Michael Ford serves on the board of Detroit&#x2019;s chapter of NOMA, The National Organization of Minority Architects and is currently a fulltime instructor at Madison College.",
 	],
   }, {
 	name: 'Tim Allen',
@@ -261,6 +270,16 @@ $(function () {
 	expandedSrc: './images/speakers/Tim_Allen-01.jpg',
 	bio: [
 	  "Timothy Allen is Professor Emeritus of Botany at the University of Wisconsin, Madison. He has been applying notions of complex systems and hierarchy theory to ecology for forty years. His first book, Hierarchy, perspectives for ecological complexity, Chicago Press 1982 established complex hierarchy theory and scaling in ecology (in press 2nd ed). His four other hierarchy theoretic books broaden across all types of ecology and beyond to the life and social sciences in general. He has published over 60 scholarly works in journals on community data analysis, agricultural systems, issues of scale, and sustainability. His latest book with T. Hoekstra is the 2nd ed of Toward a Unified Ecology, 2015. He enters the emerging field of economic ecology with J. Tainter considering complex societal collapse through diminishing return on investment. He marries rate-dependent thermodynamics with rate-independent constraint in complex ecological and social systems to predict changes.",
+	],
+  }, {
+	name: 'Sagashus Levingston',
+	subject: 'Infamous Mothers',
+	thumbSrc: './images/speakers/Sagashus\ Levingston-Grid-01.jpg',
+	expandedSrc: './images/speakers/Sagashus\ Levingston-01.jpg',
+	bio: [
+	  "Sagashus T. Levingston is the founder/CEO of Infamous Mothers, LLC where she creates products and services that \"revolutionize the mothering experience.\"",
+	  "While the work she does resonates with mothers from all walks of life, her niche market is African-American women who mother from the margins. Sagashus is also a PhD candidate at the University of Wisconsin-Madison. There she researches Infamous Mothers in 21st century literature.",
+	  "Her dissertation work is entitled Infamous Mothers: Bad Moms Doing Extraordinary Things. She lives here in with her six children and partner, Tosumba.",
 	],
   }];
   var speakerDialog = function (speaker, closeD) {
@@ -282,7 +301,7 @@ $(function () {
 		minWidth: 300,
 	  })),
 	  c.all([
-	  	c.margin(40),
+		c.margin(40),
 		c.minWidth(300),
 	  ])(c.stack({
 	  	surplusHeightFunc: hcj.funcs.surplusHeight.center,
@@ -293,7 +312,7 @@ $(function () {
 	  	  measureHeight: true,
 	  	  align: 'center',
 	  	}]),
-	  	c.text(speaker.subject, [fonts.h1, {
+	  	c.text(speaker.subject, [fonts.h2, {
 	  	  measureWidth: true,
 	  	  measureHeight: true,
 	  	  align: 'center',
@@ -343,27 +362,28 @@ $(function () {
 	var moveS = stream.once({
 	  amount: index,
 	});
+	var originalScroll = hcj.viewport.scrollS.lastValue;
+	var $page = $('.root-component-0');
 	var instance = hcj.rootComponent(c.all([
 	  c.backgroundColor({
 		background: colors.black,
 		font: colors.white,
 	  }),
-	  c.minHeightStream(stream.map(hcj.viewport.heightS, hcj.funcs.constant)),
-	  c.maxHeightStream(hcj.viewport.heightS),
-	  c.$$(function ($el) {
+	  c.and(function (i, ctx) {
+		var $el = i.$el;
+		$page.css('display', 'none');
 		$el.css('opacity', '0')
 		  .css('pointer-events', 'initial')
 		  .css('z-index', 10000);
 		setTimeout(function () {
 		  $el.css('opacity', '1')
-			.css('position', 'fixed')
 			.css('transition', 'opacity 0.2s');
 		});
 	  }),
 	])(c.sideBySide({
-	  surplusWidthFunc: hcj.funcs.surplusWidth.giveToNth(1),
+	  surplusWidthFunc: hcj.funcs.surplusWidth.giveToNth(0),
 	})([
-	  speakerSliderArrow(-1, '<', moveS),
+	  // speakerSliderArrow(-1, '<', moveS),
 	  c.slideshow({
 		transitionTime: sliderTransition,
 		moveS: moveS,
@@ -371,12 +391,14 @@ $(function () {
 	  })(speakers.map(function (s) {
 		return speakerDialog(s, closeD);
 	  })),
-	  speakerSliderArrow(1, '>', moveS),
+	  // speakerSliderArrow(1, '>', moveS),
 	])), {
 	  noBackground: true,
 	});
 	closeD.then(function () {
 	  instance.destroy();
+	  $page.css('display', '');
+	  window.scroll(0, originalScroll);
 	});
   };
 
@@ -578,12 +600,18 @@ $(function () {
 		  c.text('TEDx, x = independently organized event', [fonts.p, {
 			measureHeight: true,
 		  }]),
-		  c.text('Madison has a tight knit community of educated and motivated individuals pushing our little big city forward. TEDx Madison is a yearly congregation creating a platform for the bright minds within the badger state. Our speakers and organizers are entrepreneurs, activists, and thought leaders within their respected industries.', [fonts.p, {
+		  c.text('In the spirit of ideas worth spreading, TED has created a program called TEDx. TEDx is a program of local, self-organized events that bring people together to share a TED-like experience. Our event is called TEDx[name], where x = independently organized TED event. At our TEDx[name] event, TEDTalks video and live speakers will combine to spark deep discussion and connection in a small group. The TED Conference provides general guidance for the TEDx program, but individual TEDx events, including ours, are self-organized.', [fonts.p, {
 			measureHeight: true,
 		  }]),
-		  c.text('We invite you to join us Saturday October 29th at the Overture Center for a night of ideas worth spreading.', [fonts.p, {
+		  c.text('In the spirit of ideas worth spreading, TEDx is a program of local, self-organized events that bring people together to share a TED-like experience. At a TEDx event, TED Talks video and live speakers combine to spark deep discussion and connection. These local, self-organized events are branded TEDx, where x = independently organized TED event.  The TED Conference provides general guidance for the TEDx program, but individual TEDx events are self-organized. (Subject to certain rules and regulations.)', [fonts.p, {
 			measureHeight: true,
 		  }]),
+		  c.text('TED is a nonprofit organization devoted to Ideas Worth Spreading.  Started as a four-day conference in California 30 years ago, TED has grown to support its mission with multiple initiatives. The two annual TED Conferences invite the world\'s leading thinkers and doers to speak for 18 minutes or less. Many of these talks are then made available, free, at TED.com. TED speakers have included Bill Gates, Jane Goodall, Elizabeth Gilbert, Sir Richard Branson, Nandan Nilekani, Philippe Starck, Ngozi Okonjo-Iweala, Sal Khan and Daniel Kahneman.', [fonts.p, {
+			measureHeight: true,
+		  }]),
+		  c.text('The annual TED Conference takes place each spring in Vancouver, British Columbia. TED\'s media initiatives include TED.com, where new TED Talks are posted daily; the Open Translation Project, which provides subtitles and interactive transcripts as well as translations from volunteers worldwide; the educational initiative TED-Ed. TED has established the annual TED Prize, where exceptional individuals with a wish to change the world get help translating their wishes into action; TEDx, which supports individuals or groups in hosting local, self- organized TED-style events around the world, and the TED Fellows program, helping world-changing innovators from around the globe to amplify the impact of their remarkable projects and activities.', [fonts.p, {
+			measureHeight: true,
+		  }])
 		])),
 		c.stack({
 		  padding: 20,
@@ -677,42 +705,20 @@ $(function () {
 	  align: 'center',
 	  oneLine: true,
 	}]),
-	c.sideBySide({
-	  surplusWidthFunc: hcj.funcs.surplusWidth.giveToNth(1),
-	})([
-	  sliderArrow(-1)(c.text('<', {
-		size: 80,
-		measureWidth: true,
-		oneLine: true,
-	  })),
-	  c.all([
-		c.minWidth(500),
-		c.alignHMiddle,
-		c.alignVMiddle,
-	  ])(c.componentStream(stream.map(partnerIndexS, function (index) {
-		var p = partners[index];
-		return c.linkTo({
+	c.grid({
+	  surplusWidthFunc: hcj.funcs.surplusWidth.center,
+	})(partners.map(function (p) {
+	  return c.all([
+		c.keepAspectRatio(),
+		c.linkTo({
 		  href: p.href,
 		  targetBlank: true,
-		})(c.image({
-		  src: p.imageSrc,
-		  minHeight: sliderHeight,
-		}));
-	  }), function (i) {
-		i.$el.css('transition', 'opacity 1s')
-		  .css('opacity', 0);
-		var defer = $.Deferred();
-		setTimeout(function () {
-		  defer.resolve();
-		}, 1000);
-		return defer.promise();
-	  })),
-	  sliderArrow(1)(c.text('>', {
-		size: 80,
-		measureWidth: true,
-		oneLine: true,
-	  })),
-	]),
+		}),
+	  ])(c.image({
+		src: p.imageSrc,
+		minWidth: columnWidth / 5,
+	  }));
+	})),
   ]));
 
   var footer = c.all([
@@ -722,27 +728,32 @@ $(function () {
 	  background: colors.black,
 	  font: colors.white,
 	}),
-  ])(c.alignLRM()({
-	r: c.sideBySide({
-	  padding: 20,
-	})([{
-	  fa: 'facebook',
-	  href: 'http://www.facebook.com/tedxmadison',
-	}, {
-	  fa: 'twitter',
-	  href: 'http://www.twitter.com/tedxmadison',
-	}, {
-	  fa: 'envelope',
-	  href: 'mailto:team@tedxmadison.com',
-	}].map(function (obj) {
-	  return c.all([
-		c.linkTo(obj.href),
-	  ])(c.text(fa(obj.fa), [{
-		measureWidth: true,
-		oneLine: true,
-	  }]));
-	})),
-  }));
+  ])(c.grid({
+	padding: 20,
+	surplusWidthFunc: hcj.funcs.surplusWidth.giveToNth(0),
+  })([
+	c.text('This independent TEDx event is operated under license from TED.', [fonts.p, {
+	  measureHeight: true,
+	}]),
+	c.alignTBM()({
+	  m: c.sideBySide({
+		padding: 20,
+	  })([{
+		fa: 'facebook',
+		href: 'http://www.facebook.com/TED',
+	  }, {
+		fa: 'twitter',
+		href: 'http://twitter.com/TEDTalks',
+	  }].map(function (obj) {
+		return c.all([
+		  c.linkTo(obj.href),
+		])(c.text(fa(obj.fa), [{
+		  measureWidth: true,
+		  oneLine: true,
+		}]));
+	  })),
+	}),
+  ]));
   var page = c.all([
 	c.$addClass('root-page'),
   ])(c.stack()([
@@ -758,7 +769,7 @@ $(function () {
 	ideasSpeakersAndOrganizers,
 	community,
 	partnersFade,
-	// footer,
+	footer,
   ]));
 
   new FontLoader([
