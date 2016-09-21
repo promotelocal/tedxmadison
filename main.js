@@ -628,7 +628,7 @@ $(function () {
 			text: 'Ask&nbsp;Us&nbsp;Questions',
 		  }, {
 			fa: 'hand-pointer-o',
-			text: 'Suggest&nbsp;Speakers',
+			text: 'Suggest&nbsp;Ideas',
 		  }, {
 			fa: 'thumbs-up',
 			text: 'Want&nbsp;to&nbsp;Sponsor?',
