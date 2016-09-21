@@ -683,6 +683,9 @@ $(function () {
   }, {
 	href: 'https://www.zendesk.com/',
 	imageSrc: './slider-images/Zendesk_logo_RGB.png',
+  }, {
+	href: 'http://www.overture.org/',
+	imageSrc: './slider-images/overture.jpg',
   }];
   var partnerIndexS = stream.reduce(moveS, function (x, move) {
 	return ((x + move.amount) + partners.length) % partners.length;
