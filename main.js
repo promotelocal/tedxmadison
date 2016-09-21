@@ -670,22 +670,22 @@ $(function () {
   };
   var partners = [{
 	href: 'http://www.matrixcoworking.com/en',
-	imageSrc: './slider-images/matrix-01.jpg',
+	imageSrc: './slider-images/matrix-01.jpg?v=1',
   }, {
 	href: 'https://www.promotelocal.com/',
-	imageSrc: './slider-images/PL-01.jpg',
+	imageSrc: './slider-images/PL-01.jpg?v=1',
   }, {
 	href: 'http://www.letsbackflip.com/',
-	imageSrc: './slider-images/backflip_logo333.png',
+	imageSrc: './slider-images/backflip_logo333.png?v=1',
   }, {
 	href: 'http://undergroundshirts.com/',
-	imageSrc: './slider-images/topugp2-2.png',
+	imageSrc: './slider-images/topugp2-2.png?v=1',
   }, {
 	href: 'https://www.zendesk.com/',
-	imageSrc: './slider-images/Zendesk_logo_RGB.png',
+	imageSrc: './slider-images/Zendesk_logo_RGB.png?v=1',
   }, {
 	href: 'http://www.overture.org/',
-	imageSrc: './slider-images/overture.jpg',
+	imageSrc: './slider-images/overture.jpg?v=1',
   }];
   var partnerIndexS = stream.reduce(moveS, function (x, move) {
 	return ((x + move.amount) + partners.length) % partners.length;
@@ -717,9 +717,10 @@ $(function () {
 		  href: p.href,
 		  targetBlank: true,
 		}),
+		c.margin(20),
 	  ])(c.image({
 		src: p.imageSrc,
-		minWidth: columnWidth / 5,
+		minWidth: columnWidth / 6 - 40,
 	  }));
 	})),
   ]));
