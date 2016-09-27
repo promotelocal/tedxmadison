@@ -412,6 +412,9 @@ $(function () {
 	  measureHeight: true,
 	  align: 'center',
 	}]),
+	c.text('This year&rsquo;s theme is: &ldquo;Think Deeper&rdquo;. TEDx Madison invites our speakers to share social and economic ideas that require further thought on how they affect people of multiple perspectives. Each idea was carefully chosen based on the backgrounds and life&rsquo;s work of our speakers.', [fonts.p, {
+	  measureHeight: true,
+	}]),
 	c.alignLRM()({
 	  m: c.grid({
 		useFullWidth: true,
@@ -511,6 +514,7 @@ $(function () {
 	]));
   });
   var organizers = c.all([
+	bodyColumn,
 	anchor('organizers'),
   ])(c.stack({
 	padding: 20,
@@ -518,6 +522,9 @@ $(function () {
 	c.text('Organizers', [fonts.h1, {
 	  oneLine: true,
 	  align: 'center',
+	}]),
+	c.text('TEDx Madison organizers are independently working on a volunteer basis. They are entrepreneurs, connectors, and community members of Madison with the goal of building a platform for ideas worth spreading.', [fonts.p, {
+	  measureHeight: true,
 	}]),
 	c.grid({
 	  surplusWidthFunc: hcj.funcs.surplusWidth.center,
@@ -600,13 +607,10 @@ $(function () {
 		  c.text('TEDx, x = independently organized event', [fonts.p, {
 			measureHeight: true,
 		  }]),
-		  c.text('In the spirit of ideas worth spreading, TED has created a program called TEDx. TEDx is a program of local, self-organized events that bring people together to share a TED-like experience. Our event is called TEDx[name], where x = independently organized TED event. At our TEDx[name] event, TEDTalks video and live speakers will combine to spark deep discussion and connection in a small group. The TED Conference provides general guidance for the TEDx program, but individual TEDx events, including ours, are self-organized.', [fonts.p, {
+		  c.text('In the spirit of ideas worth spreading, TED has created a program called TEDx. TEDx is a program of local, self-organized events that bring people together to share a TED-like experience. Our event is called TEDx Madison, where x = independently organized TED event. At our TEDx Madison event, TEDTalks video and live speakers will combine to spark deep discussion and connection in a small group. The TED Conference provides general guidance for the TEDx program, but individual TEDx events, including ours, are self-organized.', [fonts.p, {
 			measureHeight: true,
 		  }]),
-		  c.text('In the spirit of ideas worth spreading, TEDx is a program of local, self-organized events that bring people together to share a TED-like experience. At a TEDx event, TED Talks video and live speakers combine to spark deep discussion and connection. These local, self-organized events are branded TEDx, where x = independently organized TED event.  The TED Conference provides general guidance for the TEDx program, but individual TEDx events are self-organized. (Subject to certain rules and regulations.)', [fonts.p, {
-			measureHeight: true,
-		  }]),
-		  c.text('TED is a nonprofit organization devoted to Ideas Worth Spreading.  Started as a four-day conference in California 30 years ago, TED has grown to support its mission with multiple initiatives. The two annual TED Conferences invite the world\'s leading thinkers and doers to speak for 18 minutes or less. Many of these talks are then made available, free, at TED.com. TED speakers have included Bill Gates, Jane Goodall, Elizabeth Gilbert, Sir Richard Branson, Nandan Nilekani, Philippe Starck, Ngozi Okonjo-Iweala, Sal Khan and Daniel Kahneman.', [fonts.p, {
+		  c.text('TED is a nonprofit organization devoted to Ideas Worth Spreading. Started as a four-day conference in California 30 years ago, TED has grown to support its mission with multiple initiatives. The two annual TED Conferences invite the world\'s leading thinkers and doers to speak for 18 minutes or less. Many of these talks are then made available, free, at TED.com. TED speakers have included Bill Gates, Jane Goodall, Elizabeth Gilbert, Sir Richard Branson, Nandan Nilekani, Philippe Starck, Ngozi Okonjo-Iweala, Sal Khan and Daniel Kahneman.', [fonts.p, {
 			measureHeight: true,
 		  }]),
 		  c.text('The annual TED Conference takes place each spring in Vancouver, British Columbia. TED\'s media initiatives include TED.com, where new TED Talks are posted daily; the Open Translation Project, which provides subtitles and interactive transcripts as well as translations from volunteers worldwide; the educational initiative TED-Ed. TED has established the annual TED Prize, where exceptional individuals with a wish to change the world get help translating their wishes into action; TEDx, which supports individuals or groups in hosting local, self- organized TED-style events around the world, and the TED Fellows program, helping world-changing innovators from around the globe to amplify the impact of their remarkable projects and activities.', [fonts.p, {
