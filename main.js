@@ -708,6 +708,9 @@ $(function () {
   }, {
 	href: 'http://www.overture.org/',
 	imageSrc: './slider-images/overture.jpg?v=1',
+  }, {
+	href: 'http://www.modmediaproductions.com/',
+	imageSrc: './slider-images/Watermark_GRADIENT_(1).png',
   }];
   var partnerIndexS = stream.reduce(moveS, function (x, move) {
 	return ((x + move.amount) + partners.length) % partners.length;
@@ -742,7 +745,7 @@ $(function () {
 		c.margin(20),
 	  ])(c.image({
 		src: p.imageSrc,
-		minWidth: columnWidth / 6 - 40,
+		minWidth: columnWidth / partners.length - 40,
 	  }));
 	})),
   ]));
