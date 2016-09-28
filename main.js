@@ -79,6 +79,12 @@ $(function () {
   }, {
 	name: 'Community',
 	href: '#community',
+  }, {
+	name: 'Contact',
+	href: 'mailto:team@tedxmadison.com',
+  }, {
+	name: 'Buy Tickets',
+	href: 'https://tedxmadison2016.eventbrite.com',
   }];
   var menuOpenS = stream.once(false);
   var headerBar = c.all([
@@ -178,9 +184,11 @@ $(function () {
 	  fill: true,
 	  // left: true,
 	}),
-  ])(c.image({
-	src: './images/TedX-Banner2.jpg',
-  }));
+  ])(c.overlays()([
+	c.image({
+	  src: './images/TedX-Banner2.jpg',
+	}),
+  ]));
   var lilQuote = c.all([
 	bodyColumn,
 	c.margin(20),
@@ -280,6 +288,16 @@ $(function () {
 	  "Sagashus T. Levingston is the founder/CEO of Infamous Mothers, LLC where she creates products and services that \"revolutionize the mothering experience.\"",
 	  "While the work she does resonates with mothers from all walks of life, her niche market is African-American women who mother from the margins. Sagashus is also a PhD candidate at the University of Wisconsin-Madison. There she researches Infamous Mothers in 21st century literature.",
 	  "Her dissertation work is entitled Infamous Mothers: Bad Moms Doing Extraordinary Things. She lives here in with her six children and partner, Tosumba.",
+	],
+  }, {
+	name: 'Joe Pater',
+	subject: 'LED Lighting and Energy Efficiency',
+	thumbSrc: './images/speakers/Joe_Pater-Grid-01.jpg',
+	expandedSrc: './images/speakers/Joe_Pater-01.jpg',
+	bio: [
+	  'Joe Pater is focused on energy efficiency in the business world. The adoption of efficiency is the first step toward a clean energy economy and his startup Rebate Bus is developing a system that will simplify utility rebates.',
+	  'He has worked for a utility implementer, managing program funds and a manufacturer, using rebates to drive customers toward efficiency. He has absorbed many different viewpoints in these experiences and believes that due to a lack of transparency, the full market potential of utility programs has not yet been realized. Rebate Bus is aiming to bridge that gap by giving utilities the ability to optimize their program investments, engage with e-commerce vendors and clearly lay out the economic picture for any decision maker involved in an upgrade.',
+	  'Joe has been working in the technology space since 2003 and has an MBA from the University of Maine. He is a strategic thinker driven by discovering a more efficient way to bring energy efficiency to the marketplace.',
 	],
   }];
   var speakerDialog = function (speaker, closeD) {
