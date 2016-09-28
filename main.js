@@ -780,7 +780,9 @@ $(function () {
 	  })),
 	}),
   ]));
-  var pageBodyStream = stream.once(c.nothing);
+  var pageBodyStream = stream.once(c.all([
+	c.minHeight(100000),
+  ])(c.nothing));
   var $body = $('body');
   var tryAddComponents = function () {
 	setTimeout(function () {
