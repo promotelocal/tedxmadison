@@ -780,6 +780,26 @@ $(function () {
 	  })),
 	}),
   ]));
+  var pageBodyStream = stream.once(c.nothing);
+  var $body = $('body');
+  var tryAddComponents = function () {
+	setTimeout(function () {
+	  var height = parseInt($body.css('height'));
+	  if (height === 100000) {
+		tryAddComponents();
+	  }
+	  else {
+		stream.push(pageBodyStream, c.stack()([
+		  lilQuote,
+		  ideasSpeakersAndOrganizers,
+		  community,
+		  partnersFade,
+		  footer,
+		]));
+	  }
+	});
+  };
+  tryAddComponents();
   var page = c.all([
 	c.$addClass('root-page'),
   ])(c.stack()([
@@ -791,11 +811,7 @@ $(function () {
 	  header,
 	  topView,
 	])),
-	lilQuote,
-	ideasSpeakersAndOrganizers,
-	community,
-	partnersFade,
-	footer,
+	c.componentStream(pageBodyStream),
   ]));
 
   new FontLoader([
