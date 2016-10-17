@@ -83,7 +83,7 @@ $(function () {
 	name: 'Contact',
 	href: 'mailto:team@tedxmadison.com',
   }, {
-	name: 'Buy Tickets',
+	name: 'Buy&nbsp;Tickets',
 	href: 'https://tedxmadison2016.eventbrite.com',
   }];
   var menuOpenS = stream.once(false);
@@ -197,7 +197,7 @@ $(function () {
 	padding: 20,
   })([
 	c.alignTBM()({
-	  m: c.text('We\'re paving the road to TEDx Madison 2016. Organizers are assembling the community, speakers, and sponsors. How can you help?', [fonts.p, {
+	  m: c.text('TEDx Madison News and Events. Subscribe to our mailing list.', [fonts.p, {
 		measureHeight: true,
 		color: colors.gray,
 		size: px(20),
@@ -215,10 +215,13 @@ $(function () {
 		background: colors.red,
 		font: colors.white,
 	  }),
-	  c.linkTo('#community'),
+	  c.linkTo({
+		href: 'http://eepurl.com/bnEavz',
+		target: '_blank',
+	  }),
 	  c.alignVTop,
 	  c.alignHLeft,
-	])(c.text('Click&nbsp;Here', [fonts.p, {
+	])(c.text('Subscribe', [fonts.p, {
 	  measureWidth: true,
 	  oneLine: true,
 	}])),
@@ -254,7 +257,7 @@ $(function () {
 	],
   }, {
 	name: 'Pupa Gilbert',
-	subject: 'The Physics of Color',
+	subject: 'Color: Physics and Perception',
 	thumbSrc: './images/speakers/Pupa_Gilbert_Grid.jpg',
 	expandedSrc: './images/speakers/Pupa_Gilbert.jpg',
 	bio: [
@@ -711,6 +714,9 @@ $(function () {
   }, {
 	href: 'http://www.modmediaproductions.com/',
 	imageSrc: './slider-images/Watermark_GRADIENT_(1).png',
+  }, {
+	href: 'http://www.foodfightinc.com/',
+	imageSrc: './slider-images/food\ fight\ logo.jpg',
   }];
   var partnerIndexS = stream.reduce(moveS, function (x, move) {
 	return ((x + move.amount) + partners.length) % partners.length;
@@ -740,7 +746,7 @@ $(function () {
 		c.keepAspectRatio(),
 		c.linkTo({
 		  href: p.href,
-		  targetBlank: true,
+		  target: '_blank',
 		}),
 		c.margin(20),
 	  ])(c.image({
