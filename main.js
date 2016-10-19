@@ -508,6 +508,12 @@ $(function () {
 	src: './images/michelle-darkened-01.jpg',
 	linkedIn: 'https://www.linkedin.com/in/roachmichelle?authType=NAME_SEARCH&authToken=9wBS&locale=en_US&trk=tyah&trkInfo=clickedVerticalmynetworkclickedEntityId109535263authTypeNAME_SEARCHidx1-1-1tarId1472500442260tasmichelle',
 	email: 'mailto:michelle@promotelocal.com',
+  }, {
+	name: 'Craig Koltes',
+	position: 'Project Manager',
+	src: './images/craig-koltes.jpg',
+	linkedIn: 'https://www.linkedin.com/in/craigkoltes?authType=NAME_SEARCH&authToken=V-zw&locale=en_US&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2CclickedEntityId%3A28059819%2CauthType%3ANAME_SEARCH%2Cidx%3A1-1-1%2CtarId%3A1476895766162%2Ctas%3Acraig%20kol',
+	email: 'craig@gofarwell.com',
   }].map(function (o) {
 	return c.all([
 	  c.linkTo({
@@ -517,11 +523,11 @@ $(function () {
 	])(c.overlays()([
 	  c.image({
 		src: o.src,
-		minWidth: 300,
+		minWidth: columnWidth / 5,
 	  }),
 	  c.all([
 		c.margin(20),
-		c.minWidth(300),
+		c.minWidth(columnWidth / 5),
 	  ])(c.alignTBM()({
 		b: c.stack()([
 		  c.text(o.name, [fonts.h2, {
@@ -557,13 +563,9 @@ $(function () {
 	  })([
 		organizerList[0],
 		organizerList[1],
-	  ]),
-	  c.grid({
-		surplusWidthFunc: hcj.funcs.surplusWidth.center,
-		useFullWidth: true,
-	  })([
 		organizerList[2],
 		organizerList[3],
+		organizerList[4],
 	  ]),
 	]),
   ]));
