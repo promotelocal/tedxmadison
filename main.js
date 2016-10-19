@@ -518,7 +518,7 @@ $(function () {
 	return c.all([
 	  c.linkTo({
 		href: o.linkedIn,
-		targetBlank: true,
+		target: '_blank',
 	  }),
 	])(c.overlays()([
 	  c.image({
