@@ -238,7 +238,7 @@ $(function () {
 	],
   }, {
 	name: 'Matthew Gonnering',
-	subject: 'Organizational Structure',
+	subject: 'Empathy in Business',
 	thumbSrc: './images/speakers/thumbnail_Matt Gonnering - Grid-01.jpg',
 	expandedSrc: './images/speakers/thumbnail_Matthew Gonnering - Expanded-01.jpg',
 	bio: [
@@ -265,8 +265,9 @@ $(function () {
 	  "She lives in Madison and Berkeley, teaches &#x201c;Physics in the Arts&#x201d;, and wrote a &#x201c;Physics in the Arts&#x201d; book co-authored with Willy Haeberli, published in English (2008, 2011) and Chinese (2011). She won several awards including: Knight of Italy (2001); Romnes 2002, Vilas 2006, Hamel 2008, and Chancellor Distinguished Teaching Award 2011 at UW-Madison; The Outstanding Young Persons of the world (TOYP-JCI, 1997); American Competitiveness and Innovation Award (ACI-NSF, 2008); American Physical Society Fellowship (2010); Science-NSF Visualizations Challenge (2012); BiophysicsART (2014); Radcliffe Fellowship (2014-2015, 2016). She loves to bridge the gap between art and science, is an art collector, enjoys traveling and wine making.",
 	],
   }, {
+	
 	name: 'Mike Ford',
-	subject: 'Hip-hop and Architecture',
+	subject: 'Hip Hop Architecture: The Post Occupancy Report of Modernism',
 	thumbSrc: './images/speakers/Mike_Ford_Grid.jpg',
 	expandedSrc: './images/speakers/Mike_Ford.jpg',
 	bio: [
@@ -417,7 +418,7 @@ $(function () {
 	  noBackground: true,
 	});
 	closeD.then(function () {
-	  instance.destroy();
+	  instance.remove();
 	  $page.css('display', '');
 	  window.scroll(0, originalScroll);
 	});
